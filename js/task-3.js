@@ -25,8 +25,8 @@ const images = [
 const createLiItem = item => {
   const liRef = document.createElement('li');
   const imgRef = document.createElement('img');
-  liRef.style.marginRight = '30px';
-  imgRef.style.width = '100%';
+  liRef.classList.add('gallery-item');
+  imgRef.classList.add('gallery-item-img');
   imgRef.src = item.url;
   imgRef.alt = item.alt;
   liRef.append(imgRef);

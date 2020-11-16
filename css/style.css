@@ -5,6 +5,14 @@
   align-items: center;
 }
 
+.gallery-item {
+  margin-right: 30px;
+}
+
+.gallery-item-img {
+  width: 100%;
+}
+
 #counter {
   margin-top: 50px;
   margin-bottom: 30px;
