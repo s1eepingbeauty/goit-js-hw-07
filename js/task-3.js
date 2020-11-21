@@ -22,17 +22,16 @@ const images = [
   },
 ];
 
-const createLiItem = item => {
-  const liRef = document.createElement('li');
-  const imgRef = document.createElement('img');
-  liRef.classList.add('gallery-item');
-  imgRef.classList.add('gallery-item-img');
-  imgRef.src = item.url;
-  imgRef.alt = item.alt;
-  liRef.append(imgRef);
-  return liRef;
-};
-
-const liItem = images.map(image => createLiItem(image));
 const ulRef = document.querySelector('#gallery');
-ulRef.append(...liItem);
+
+ulRef.insertAdjacentHTML(
+  'afterbegin',
+  images
+    .map(
+      ({ url, alt }) =>
+        `<li class="gallery-item">
+            <img class="gallery-item-img" src="${url}" alt="${alt}">
+        </li>`
+    )
+    .join('')
+);
